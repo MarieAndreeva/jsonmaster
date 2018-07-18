@@ -1,16 +1,44 @@
 extends ../_layout
 
+
 block content
 
-    h1=`@${user.name}`
+    nav(aria-label="breadcrumb")
+        ol(class="breadcrumb")
+            li(class="breadcrumb-item")
+                a(href="/") Home
+            li(class="breadcrumb-item")
+                a(href="/users/") Users
+            li(class="breadcrumb-item")
+                a(href=`/users/${user.id}`)=user.username
+    hr
+
+    h1=`@${user.username}`
+    h2=`name: ${user.name}`
+    h2=`email: ${user.email}`
+    h2=`website: ${user.website}`
 
     hr
-    h1="User posts"
-    if userPosts.length
-        ul
-            each post in userPosts
-                li
-                    h3
-                        a(href=`/posts/${post.id}`)=post.title
-    else
-        p="This user has no posts"
+
+    .row
+        .col-md-6
+            h2=`${user.name}'s posts`
+            if userPosts.length
+                ul
+                    each post in userPosts
+                        li
+                            h3
+                                a(href=`/posts/${post.id}`)=post.title
+            else
+                p="This user has no posts"
+        .col-md-6
+
+            h2=`${user.name}'s albums`
+            if userAlbums.length
+                ul
+                    each album in userAlbums
+                        li
+                            h3
+                                a(href=`/albums/${album.id}`)=album.title
+            else
+                p The user has no albums

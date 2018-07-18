@@ -1,9 +1,11 @@
-
 extends ../_layout
 
 block content
-    p=album.title 
-    each photo in photos
-        img(src=photo.url)
 
+    h1(class="my-4 text-center text-lg-left")=album.title
+
+    div(class="row text-center text-lg-left")
+        each photo in photos
+            a(href="#", class="d-block mb-4")
+            img(class="img-fluid img-thumbnail" src=photo.thumbnailUrl)
     

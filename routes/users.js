@@ -19,7 +19,13 @@ const detail = (req, res) => {
         .then((user) => {
             rp({ uri: `http://jsonplaceholder.typicode.com/users/${id}/posts`, json: true })
                 .then((posts) => {
-                    res.render('users/detail', { user: user, userPosts: posts });
+                    rp({ uri: `http://jsonplaceholder.typicode.com/users/${id}/albums`, json: true })
+                        .then((albums) => {
+                            res.render('users/detail', { user: user, userPosts: posts, userAlbums: albums });
+                        })
+                        .catch((err) => {
+                            console.log(err);
+                        })
                 })
                 .catch((err) => {
                     console.log(err);

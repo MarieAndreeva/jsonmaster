@@ -2,12 +2,31 @@ extends ../_layout
 
 block content
 
-    h1=post.title
-    p=post.body
-    p
-        a(href=`/users/${user.id}`)=user.username
+    nav(aria-label="breadcrumb")
+        ol(class="breadcrumb")
+            li(class="breadcrumb-item")
+                a(href="/") Home
+            li(class="breadcrumb-item")
+                a(href="/posts/") Posts
+            li(class="breadcrumb-item active" aria-current="page")
+                a(href=`/posts/${post.id}`)=post.title
     hr
-    p="Comments"
-    ul
-        each comment in comments
-            li=comment.body
+
+    article
+        header
+            h1=post.title
+        section
+            p=post.body
+        .meta
+            a(href=`/users/${user.id}`)=`by @${user.username}`
+        
+    hr
+    
+    section(class='responses')
+        h2 Responses
+        if comments.length
+            ul
+                each comment in comments
+                    include ../_comment
+        else
+            p The post has no comments

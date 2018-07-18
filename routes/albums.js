@@ -20,7 +20,6 @@ const detail = (req, res) => {
             rp({uri: `http://jsonplaceholder.typicode.com/albums/${album.id}/photos/`, json: true})
                 
             .then((photos)=> {
-                    console.log(photos)
                     res.render("albums/detail", {album: album, photos: photos});
                 })
             .catch((err) => {
