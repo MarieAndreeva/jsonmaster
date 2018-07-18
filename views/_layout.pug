@@ -1,0 +1,21 @@
+html
+    head
+        title Blog app
+        link(rel='stylesheet', href='css/CSS1.css')
+        link(rel='stylesheet', href='css/bootstrap.css')
+    body
+        .container
+            .row
+                .col-md-4
+                    h1="Blog app"
+                .col-md-8
+                    nav.navbar
+                        ul.navbar-nav
+                            li.nav-item
+                                a(href="/posts/" class="nav-link") Posts
+                            li
+                                a(href="/users/" class="nav-link") Users
+                            li  
+                                a(href="/albums/" class="nav-link") Albums
+                            
+            block content

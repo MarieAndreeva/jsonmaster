@@ -1,0 +1,10 @@
+extends ../_layout
+
+
+block content
+
+    h1="Bloggers"
+    ul
+    each user in users
+        li
+            a(href=`/users/${user.id}/`)=user.username

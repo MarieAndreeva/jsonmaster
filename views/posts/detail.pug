@@ -1,0 +1,13 @@
+extends ../_layout
+
+block content
+
+    h1=post.title
+    p=post.body
+    p
+        a(href=`/users/${user.id}`)=user.username
+    hr
+    p="Comments"
+    ul
+        each comment in comments
+            li=comment.body

@@ -1,0 +1,10 @@
+extends ../_layout
+
+
+block content
+
+    h1="Bloggers"
+    ul
+    each album in albums
+        li
+            a(href=`/albums/${album.id}/`)=album.title

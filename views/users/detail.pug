@@ -1,0 +1,16 @@
+extends ../_layout
+
+block content
+
+    h1=`@${user.name}`
+
+    hr
+    h1="User posts"
+    if userPosts.length
+        ul
+            each post in userPosts
+                li
+                    h3
+                        a(href=`/posts/${post.id}`)=post.title
+    else
+        p="This user has no posts"

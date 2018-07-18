@@ -1,0 +1,43 @@
+.header{
+    border-color:rgb(72, 57, 92);
+    background-color: #9985B4;
+    border-style: groove;
+    text-align:center;
+    height: 15%;
+    padding: 1.8%;
+    min-width: 40%;
+
+}
+
+.container-fluid{ 
+    background-color: white;
+   text-align: center;
+    height: 85%;
+}
+
+A {
+    color: #60339C; 
+    text-align: center;
+}
+
+.cart{
+    border-style: groove;
+    border-color: #60339C;
+    text-align: left;
+
+
+}
+
+.col-md-2{
+border-bottom-left-radius: 15px;
+border-bottom-right-radius: 15px;
+border-color:rgb(72, 57, 92);
+border-style: groove;
+height: 100%;
+
+
+}
+.col-md-10{
+padding: 10px;
+
+}

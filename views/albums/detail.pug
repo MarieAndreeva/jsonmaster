@@ -1,0 +1,9 @@
+
+extends ../_layout
+
+block content
+    p=album.title 
+    each photo in photos
+        img(src=photo.url)
+
+    
